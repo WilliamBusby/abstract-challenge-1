@@ -2,7 +2,7 @@ package com.nology;
 
 public class Square extends Shape {
 
-    private int sideLength;
+    private final int sideLength;
 
     public Square(int sideLength) {
         super(4);

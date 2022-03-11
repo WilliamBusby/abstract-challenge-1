@@ -2,9 +2,9 @@ package com.nology;
 
 public class Triangle extends Shape {
 
-    private int side1;
-    private int side2;
-    private int side3;
+    private final int side1;
+    private final int side2;
+    private final int side3;
 
     public Triangle(int side1, int side2, int side3) {
         super(3);
@@ -15,7 +15,7 @@ public class Triangle extends Shape {
 
     @Override
     public double getArea() {
-        double semi = (side1+side2+side3)/2;
+        double semi = (double) (side1+side2+side3)/2;
         return Math.sqrt(semi*(semi-side1)*(semi-side2)*(semi-side3));
     }
 

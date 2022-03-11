@@ -21,23 +21,31 @@ public class Main {
         //
         //Bonus - Create an array of 50 Shapes.  Random amount of triangles, circles and squares.  All of these shapes should have correct but random arguments passed into them.
 
-        Triangle newTri = new Triangle(2,2,2);
-        System.out.println(newTri.getPerimeter());
-        System.out.println(newTri.getArea());
+        List<Shape> testList = random50Shapes();
+
+        System.out.println(testList.get(20).getArea());
     }
 
-    public List<Shape> random50Shapes() {
+    public static List<Shape> random50Shapes() {
         List<Shape> outputList = new ArrayList<>();
         Random rand = new Random();
 
         for(int i = 0; i<50; i++) {
-
+            outputList.add(generateShape(rand.nextInt(4), rand.nextInt(10), rand.nextInt(10), rand.nextInt(10)));
         }
 
         return outputList;
     }
 
-    public Shape generateShape(int type, int value1, int value2, int value3) {
-        return new Circle(1);
+    public static Shape generateShape(int type, int value1, int value2, int value3) {
+        if(type==0) {
+            return new Square(value1);
+        } else if(type==1) {
+            return new Circle(value1);
+        } else if(type==2) {
+            return new Rectangle(value1,value2);
+        } else {
+            return new Triangle(value1,value2,value3);
+        }
     }
 }

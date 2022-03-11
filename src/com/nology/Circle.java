@@ -2,7 +2,7 @@ package com.nology;
 
 public class Circle extends Shape {
 
-    private int radius;
+    private final int radius;
 
     public Circle(int radius) {
         super(1);
@@ -11,7 +11,7 @@ public class Circle extends Shape {
 
     @Override
     public double getArea() {
-        return Math.round(Math.PI*radius*radius*100)/100;
+        return (double) Math.round(Math.PI*radius*radius*100)/100;
     }
 
     @Override
